@@ -1,6 +1,10 @@
 package org.zjb.leetcode;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author zjb
@@ -8,7 +12,8 @@ import java.util.Scanner;
  */
 public class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        sc.nextLine();
+        String a = "abcd";
+        Set<Character> tSet = new HashSet(Arrays.asList(a.toCharArray()));
+        Set<Character> set2 = tSet.stream().collect(Collectors.toSet());
     }
 }

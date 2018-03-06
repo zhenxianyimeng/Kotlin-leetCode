@@ -1,6 +1,8 @@
 package org.zjb.leetcode.easy
 
 import java.util.*
+import java.util.stream.Collectors
+import kotlin.collections.ArrayList
 
 
 /**
@@ -19,15 +21,11 @@ fun main(args: Array<String>) {
 }
 
 fun numJewelsInStones(J: String, S: String): Int {
-    var set = hashSetOf<Char>()
-    for (ch in J.toCharArray()){
-        set.add(ch)
-    }
+    var set = J.toCharArray().toCollection(ArrayList()).stream().collect(Collectors.toSet<Char>())
     var num = 0
-    for(ch in S.toCharArray()){
-        if(set.contains(ch)){
-            num++
-        }
-    }
+
+    S.toCharArray().toCollection(ArrayList()).stream().forEach { c->if(set.contains(c)){
+        num++
+    } }
     return num
 }

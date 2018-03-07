@@ -1,4 +1,4 @@
-package org.zjb.leetcode;
+package org.zjb;
 
 import java.util.Arrays;
 import java.util.HashSet;
